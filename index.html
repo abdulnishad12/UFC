@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+    <title>United Freight Carriers</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/responsive.css">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+	<script language="JavaScript" src="js/ufc.js" type="text/javascript"></script>
+	<style>
+label {
+font-size: 0.8em;
+}
+input {
+  font-size: 0.7em;
+}
+
+.header-fixed {
+	background-color:#ffffff;
+	/*box-shadow:0 1px 1px #ccc;*/
+	padding: 20px 40px;
+	height: 80px;
+	color: #ffffff;
+	box-sizing: border-box;
+	top:-100px;
+
+	-webkit-transition:top 0.3s;
+	transition:top 0.3s;
+}
+
+.header-fixed .header-limiter {
+	max-width: 1200px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/*	The header placeholder. It is displayed when the header is fixed to the top of the
+	browser window, in order to prevent the content of the page from jumping up. */
+
+.header-fixed-placeholder{
+	height: 80px;
+	display: none;
+}
+
+/* Logo */
+
+.header-fixed .header-limiter h1 {
+	float: left;
+	font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	margin: 0;
+}
+
+.header-fixed .header-limiter h1 span {
+	color: #5383d3;
+}
+
+/* The navigation links */
+
+.header-fixed .header-limiter a {
+	color: #111582;
+	text-decoration: none;
+}
+
+.header-fixed .header-limiter nav {
+	font:16px Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	float: right;
+}
+
+.header-fixed .header-limiter nav a{
+	display: inline-block;
+	padding: 0 5px;
+	text-decoration:none;
+	color: #111582;
+	opacity: 0.9;
+}
+
+.header-fixed .header-limiter nav a:hover{
+	opacity: 1;
+}
+
+.header-fixed .header-limiter nav a.selected {
+	color: #608bd2;
+	pointer-events: none;
+	opacity: 1;
+}
+
+/* Fixed version of the header */
+
+body.fixed .header-fixed {
+	padding: 10px 40px;
+	height: 50px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+body.fixed .header-fixed-placeholder {
+	display: block;
+}
+
+body.fixed .header-fixed .header-limiter h1 {
+	font-size: 24px;
+	line-height: 30px;
+}
+
+body.fixed .header-fixed .header-limiter nav {
+	line-height: 28px;
+	font-size: 13px;
+}
+
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+
+	.header-fixed {
+		padding: 20px 0;
+		height: 75px;
+	}
+
+	.header-fixed .header-limiter h1 {
+		float: none;
+		margin: -8px 0 10px;
+		text-align: center;
+		font-size: 24px;
+		line-height: 1;
+	}
+
+	.header-fixed .header-limiter nav {
+		line-height: 1;
+		float:none;
+	}
+
+	.header-fixed .header-limiter nav a {
+		font-size: 13px;
+	}
+
+	body.fixed .header-fixed {
+		display: none;
+	}
+}
+
+
+
+
+</style>
+</head>
+<body>
+<!--<section id="header">
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
+</section>	 -->	
+
+
+<header class="header-fixed">
+	<div class="container">
+	<div class="header-limiter">
+
+		<h1><a href="#"><img src="img/ufc_logo.gif" alt=""></a></h1>
+
+		<nav>
+			<a href="#">Home</a>
+			<a href="#main">The Company</a>
+			<a href="#about">Management</a>
+			<a href="#Services">Services</a>
+			<a href="#links">Links</a>
+			<a href="#Contactus">Contact Us</a>
+		</nav>
+
+	</div>
+	</div>
+</header>
+
+<div class="header-fixed-placeholder"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+
+	$(document).ready(function(){
+
+		var showHeaderAt = 150;
+
+		var win = $(window),
+				body = $('body');
+
+		// Show the fixed header only on larger screen devices
+
+		if(win.width() > 400){
+
+			// When we scroll more than 150px down, we set the
+			// "fixed" class on the body element.
+
+			win.on('scroll', function(e){
+
+				if(win.scrollTop() > showHeaderAt) {
+					body.addClass('fixed');
+				}
+				else {
+					body.removeClass('fixed');
+				}
+			});
+
+		}
+
+	});
+
+</script>
+<div class="container">
+<div id="login" align="right">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>&nbsp;</td>
+							
+                                <label style="color:white;">&nbsp;</label>  <input name="username" id="username" placeholder="Username" type="text" class="box" maxlength="10" value="" style="padding:0px;"/>
+                                &nbsp
+                                <!--<label style="color:white;">Password&nbsp;</label>--> <input name="passwd" type="password" class="box" id="passwd" placeholder="Password" maxlength="10" 
+								style="padding:0px"/>
+                            <span id="searchButton">
+                                <a href="javascript:;" onclick="validateLogin();return false;"><img src="img/login1.png" width="65" height="21" alt="Search"/></a>
+                            </span>
+                            
+                        </tr>
+                    </table>
+                </div>
+</div>
+
+<!--<section id="header">
+     
+			<div class="container">
+                <pre>&nbsp;</pre>
+                    <div id="login" align="right">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td>&nbsp;</td>
+							
+                                <label style="color:white;">&nbsp;</label>  <input name="username" id="username" placeholder="Username" type="text" class="box" maxlength="10" value="" style="padding:0px;"/>
+                                &nbsp
+                                 <input name="passwd" type="password" class="box" id="passwd" placeholder="Password" maxlength="10" 
+								style="padding:0px"/>
+                            <span id="searchButton">
+                                <a href="javascript:;" onclick="validateLogin();return false;"><img src="img/login1.png" width="65" height="21" alt="Search"/></a>
+                            </span>
+                            
+                        </tr>
+                    </table>
+                </div> 
+				<nav class="navbar navbar-expand">
+					<a class="navbar-brand" href="#"><img src="img/ufc_logo.gif" alt=""></a>
+					<ul class="navbar-nav ml-auto nav-flex-icon text-light">
+						<li class="d-none d-sm-block  nav-item">
+							
+							<h6 ><a href="#header" style="color:white;font-size: 0.8em;">Home</a></h6>
+						</li>
+						<li>&nbsp;&nbsp;&nbsp;</li>
+						<li class="d-none d-sm-block  nav-item">
+							
+							<h6><a href="#Services" style="color:white;font-size: 0.8em;">Services</a></h6>
+						</li>
+						<li>&nbsp;&nbsp;&nbsp;</li>
+						<li class="d-none d-sm-block nav-item">
+							
+							<h6><a href="#about" style="color:white;font-size: 0.8em;">Management</a></h6>
+						</li>
+						<li>&nbsp;&nbsp;&nbsp;</li>
+						<li class="d-none d-sm-block nav-item">
+							
+							<h6><a href="#links" style="color:white;font-size: 0.8em;">Links</a></h6>
+						</li>
+						<li>&nbsp;&nbsp;&nbsp;</li>
+						<li class="d-none d-sm-block nav-item">
+							
+							<h6><a href="#Contactus" style="color:white;font-size: 0.8em;">Contact Us</a></h6>
+						</li>
+						<li class="d-none d-sm-block nav-item">
+							
+							<h6><a href="#Contactus" style="color:white;font-size: 0.8em;">Contact Us</a></h6>
+						</li>
+					</ul>
+				</nav> 
+        <div class="ml-3 text-dark hamburger">
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        </div>
+        <div id="myNav" class="overlay">
+          <a href="#" class="overlay-logo"><img src="img/" alt=""></a>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content text-center text-uppercase">
+            <a href="#header" onclick="closeNav()">Home</a>
+            <a href="#Services" onclick="closeNav()">Services</a>
+            <a href="#about" onclick="closeNav()">Management</a>
+            <a href="#links" onclick="closeNav()">Links</a>
+            <a href="#Contactus" onclick="closeNav()">Contact Us</a>
+          </div>
+        </div> 
+				<div class="row">	
+					<div class="col-sm-6 col-6 col-md-5 col-lg-5 pl-0">
+						<div class="header-img mt-4" style="margin-top: -5rem!important;">
+							<img  class="img-fluid" src="img/shipnew1.png" alt="man">
+						</div>
+					</div>
+					<div class="col-sm-6 col-6 col-md-7 col-lg-7 pl-0">
+						<div class="header-right pt-lg-5 mt-lg-5">
+						<img  class="img-fluid" src="img/ufc_logo.gif" alt="man"> 
+							<p style="color:white;margin-top:1rem!important;font-size: 1.2em;">Creating seamless and job specific logistics solutions for our customers</p>
+							<h2 class="text-uppercase mt-3 mt-sm-1 mt-md-1 ">Lorel Ipsum</h2>
+							<p class="d-none d-sm-block my-lg-5 my-md-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> 
+							<div class="header-btn mt-3 mt-sm-1 mt-md-1">
+								<button type="button" class="btn px-md-4 py-md-2 px-1 py-1 mr-md-2">Lorel</button>
+								<button type="button" class="btn px-md-4 px-1 py-1 py-md-2">Ipsum</button>
+							</div> 
+						</div>
+					</div>
+				</div>
+			</div>
+</section> -->
+
+<section>
+	
+	<img src="img/web12.jpg" style="width: 100%;height: auto;">
+	
+	</section>
+    <section id="main">
+      <div class="container">
+        <div class="text-center service-head my-4 my-sm-4 my-md-5 py-md-5" style="padding-bottom:0rem!important;">
+          <h2 style="color:#111582;">The Company</h2>
+          <svg width="30" height="20">
+  					<path d="M0,14 22,1" stroke="#c90129" stroke-width="3" />
+				
+        		<!--<path d="M0,9 25,9" stroke="#67e6e0" stroke-width="1"/>
+        		<path d="M0,18 25,18" stroke="#67e6e0" stroke-width="1"/> -->
+				  </svg>
+          <p style="line-height: 1.5;">United Freight Carriers (UFC) is a full service dry cargo vessel operator and logistics service provider. 
+		  </br>UFC is part of the Golden Ocean Group (listed in Norway and Singapore).</p>
+        </div>
+		<div class="text-center service-head my-4 my-sm-4 my-md-5 py-md-5" style="padding-bottom:0rem!important;">
+          <h2 style="color:#111582;">The Strategy</h2>
+          <svg width="30" height="20">
+		  <path d="M0,14 22,1" stroke="#c90129" stroke-width="3" />
+  					<!--<path d="M0,1 25,1" stroke="#67e6e0" stroke-width="1"/>
+        		<path d="M0,9 25,9" stroke="#67e6e0" stroke-width="1"/>
+        		<path d="M0,18 25,18" stroke="#67e6e0" stroke-width="1"/> -->
+				  </svg>
+          <p>Being part of the one of world’s largest ship owning/operating groups ensures access to a wide range of vessels and having established relationships with third party service providers, allows us to create seamless and job specific logistics solutions for our Customers.</p>
+        </div>
+		<div class="text-center service-head my-4 my-sm-4 my-md-5 py-md-5" style="padding-bottom:0rem!important;">
+          <h2 style="color:#111582;">The Team</h2>
+          <svg width="30" height="20">
+		  <path d="M0,14 22,1" stroke="#c90129" stroke-width="3" />
+  					<!--<path d="M0,1 25,1" stroke="#67e6e0" stroke-width="1"/>
+        		<path d="M0,9 25,9" stroke="#67e6e0" stroke-width="1"/>
+        		<path d="M0,18 25,18" stroke="#67e6e0" stroke-width="1"/> -->
+				  </svg>
+          <p>Our experienced team of dedicated professionals stand ready to assist our business partners in planning and executing their logistics requirements.</p>
+        </div>
+        <!--<div class="row pb-md-5 mb-5">
+          <div class="col-md-3 col-6">
+            <div class="card service-card mb-4 mb-sm-5 mb-md-0 pt-3 pt-md-4 py-lg-5">
+             <div class="text-center service-card-icon">
+                <i class="fa fa-check fa-lg"></i>
+              </div> 
+            <div class="card-body text-center">
+              <h4 class="card-title my-md-4"><strong>The Company</strong></h4>
+              <p class="card-text">United Freight Carriers (UFC) is a full service dry cargo vessel operator and logistics service provider. UFC is part of the Golden Ocean Group (listed in Norway and Singapore).</p>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="card service-card pt-3 pt-md-4 py-lg-5">
+             <div class="text-center service-card-icon">
+                <i class="fa fa-tint fa-lg"></i>
+              </div> 
+            <div class="card-body text-center">
+              <h4 class="card-title my-md-4"><strong>The Strategy</strong></h4>
+              <p class="card-text">Being part of the one of world’s largest ship owning/operating groups ensures access to a wide range of vessels, and having established relationships with third party service providers, allows us to create seamless and job specific logistics solutions for our Customers.</p>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-6">
+            <div class="card service-card pt-3 pt-md-4 py-lg-5">
+              <div class="text-center service-card-icon">
+                <i class="fa fa-refresh fa-lg"></i>
+              </div> 
+            <div class="card-body text-center">
+              <h4 class="card-title my-md-4"><strong>The Team</strong></h4>
+              <p class="card-text">Our experienced team of dedicated professionals stand ready to assist our business partners in planning and executing their logistics requirements.</p>
+            </div>
+            </div>
+          </div>
+     
+        </div> -->
+      </div>
+    </section>
+    <section id="about" style="padding: 0% 0">
+      <!--<div class="skull-bg">
+        <img src="img/skull.png" alt="skull">
+      </div> -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <!--<ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol> -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="text-center service-head my-4 my-sm-4 my-md-5 py-md-5" style="padding-bottom: 0rem!important;">
+                    <h2 style="color:white;">Management</h2>
+                    <p class="pb-lg-5" style="color:white;"></br>The corporate management functions of UFC are handled through Golden Ocean Management AS in Oslo, Norway.</br></br>
+The day to day management functions of the company including Chartering and Operations are handled by representative offices in Singapore, Dubai and New York in conjunction with the office in Oslo.<br></br>
+
+Our geographically well placed management teams, along with a network of agents in strategic locations, allow us to provide around the clock service to our diverse customer base no matter where they are located.</p>
+                  </div>
+                 <!-- <div class="carousel-left-btn mt-lg-5">
+                    <button class="btn px-md-4 py-md-2 px-1 py-1 mr-md-2 btn-info" type="button" name="button">GET IT NOW</button>
+                  </div> -->
+                </div>
+                <!--<div class="col">
+                  <img class="carousel-img" src="img/phone.png" alt="First slide">
+                </div>-->
+              </div>
+            </div>
+          </div>
+          <!--<div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="carousel-left-text text-light pt-md-5">
+                    <h3 class="text-uppercase my-lg-5 pt-lg-3">Lorel</h3>
+                    <p class="pb-lg-5 d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  </div>
+                  <div class="carousel-left-btn mt-lg-5">
+                    <button class="btn px-md-4 py-md-2 px-1 py-1 mr-md-2 btn-info" type="button" name="button">GET IT NOW</button>
+                  </div>
+                </div>
+                <div class="col">
+                  <img class="carousel-img" src="img/phone.png" alt="First slide">
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!--<div class="carousel-item">
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <div class="carousel-left-text text-light pt-md-5">
+                    <h3 class="text-uppercase my-lg-5 pt-lg-3">Lorel Ipsum</h3>
+                    <p class="pb-lg-5 d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatatlore magnam aliquam quaerat voluptatem.</p>
+                  </div>
+                  <div class="carousel-left-btn mt-lg-5">
+                    <button class="btn px-md-4 py-md-2 px-1 py-1 mr-md-2 btn-info" type="button" name="button">GET IT NOW</button>
+                  </div>
+                </div>
+                <div class="col">
+                  <img class="carousel-img" src="img/phone.png" alt="First slide">
+                </div>
+              </div>
+            </div>
+          </div>  -->
+        </div>
+      </div>
+    </section>
+	<!--<section id="Services">
+	
+	<img src="img/web1.jpg" style="width: 100%;height: auto;">
+	
+	</section> -->
+	
+    <section id="Services">
+      <div class="container">
+        <div class="portfolio-text text-center" style="margin-top: 5rem!important;">
+          <h2 style="color:#111582;">Services</h2>
+          <svg width="30" height="20">
+           <path d="M0,14 22,1" stroke="#c90129" stroke-width="3" />
+				
+        		<!--<path d="M0,9 25,9" stroke="#67e6e0" stroke-width="1"/>
+        		<path d="M0,18 25,18" stroke="#67e6e0" stroke-width="1"/> -->
+         </svg>
+          <p>United Freight Carriers (UFC) is a full service dry cargo vessel operator and logistics service provider.
+UFC operates in the sub panamax sector with special emphasis on handy size bulk carriers and multipurpose Vessels.<br><br>
+
+In addition to expertly carrying bulk and bagged commodities in the most cost effective and expeditious way, we can arrange for bulk discharge, bagging and inland deliveries of a wide range of commodities as well as complex industrial projects. Our experienced team of dedicated professionals stands ready to assist our business partners in planning and executing their logistics requirements.<br><br>
+
+The Chartering team works with our Clients to fully understand their requirements and to provide the specific services they require.<br><br>
+
+The Operations team helps our Clients in planning and executing the operations and in optimizing the process.<br><br>
+
+The team of Port Captains attends load ports, discharge ports and inland destinations to ensure our Clients’ valuable cargo is always well cared for.</p>
+        </div>
+				<!--<div class="portfolio-nav text-center m-2 mb-sm-3 my-md-5">
+          <div>
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <button class="btn btn-default filter-button" data-filter="creative">Service1</button>
+            <button class="btn btn-default filter-button" data-filter="business">Service2</button>
+            <button class="btn btn-default filter-button" data-filter="branding">Service3</button>
+        </div>
+				</div> -->
+        <div class="row" style="margin-top: 3rem!important;">
+          <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-6 px-2 filter creative">
+                  <img src="img/web2.jpg" onclick="openModal();currentSlide(1)" class="img-fluid hover-shadow cursor">
+              </div>
+              <div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 col-6 filter business">
+                  <img src="img/web3.jpg" onclick="openModal();currentSlide(2)" class="img-fluid hover-shadow cursor">
+              </div>
+              <div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 col-6 pt-3 pt-md-0 pt-sm-0   filter creative">
+                  <img src="img/web4.jpg" onclick="openModal();currentSlide(3)" class="img-fluid hover-shadow cursor">
+              </div>
+              <div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 pt-3 col-6 filter branding">
+                  <img src="img/web5.jpg" onclick="openModal();currentSlide(4)" class="img-fluid hover-shadow cursor">
+              </div>
+              <div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 col-6 pt-3 filter branding">
+                  <img src="img/web7.jpg" onclick="openModal();currentSlide(5)" class="img-fluid hover-shadow cursor">
+              </div>
+              <div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 col-6 pt-3 filter branding">
+                  <img src="img/web8.jpg" onclick="openModal();currentSlide(6)" class="img-fluid hover-shadow <cursor></cursor>">
+              </div>
+			  <!--<div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 col-6 pt-3 filter branding">
+                  <img src="img/web9.jpg" onclick="openModal();currentSlide(6)" class="img-fluid hover-shadow <cursor></cursor>">
+              </div>
+			  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 col-6 pt-3 filter branding">
+                  <img src="img/web8.jpg" onclick="openModal();currentSlide(6)" class="img-fluid hover-shadow <cursor></cursor>">
+              </div>
+			  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 col-6 pt-3 filter branding">
+                  <img src="img/web9.jpg" onclick="openModal();currentSlide(6)" class="img-fluid hover-shadow <cursor></cursor>">
+              </div>
+			  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 col-6 pt-3 filter branding">
+                  <img src="img/web10.jpg" onclick="openModal();currentSlide(6)" class="img-fluid hover-shadow <cursor></cursor>">
+              </div>
+			  <div class="gallery_product col-lg-4 col-md-4 col-sm-4 px-2 col-6 pt-3 filter branding">
+                  <img src="img/web11.jpg" onclick="openModal();currentSlide(6)" class="img-fluid hover-shadow <cursor></cursor>">
+              </div> -->
+          </div>
+          <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content-u">
+              <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="img/web2.jpg" alt="" class="w-100">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="img/web3.jpg" alt="" class="w-100">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="img/web4.jpg" alt="" class="w-100">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="img/web5.jpg" alt="" class="w-100">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="img/web7.jpg" alt="" class="w-100">
+              </div>
+              <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="img/web8.jpg" alt="" class="w-100">
+              </div>
+			  <!--<div class="mySlides">
+                <div class="numbertext">7 / 7</div>
+                <img src="img/web9.jpg" alt="" class="w-100">
+              </div>
+			  <div class="mySlides">
+                <div class="numbertext">8 / 11</div>
+                <img src="img/web8.jpg" alt="" class="w-100">
+              </div>
+			  <div class="mySlides">
+                <div class="numbertext">9 / 11</div>
+                <img src="img/web9.jpg" alt="" class="w-100">
+              </div>
+			  <div class="mySlides">
+                <div class="numbertext">10 / 11</div>
+                <img src="img/web10.jpg" alt="" class="w-100">
+              </div>
+			  <div class="mySlides">
+                <div class="numbertext">11 / 11</div>
+                <img src="img/web11.jpg" alt="" class="w-100">
+              </div> -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+              <ul class="list-unstyled m-0">
+                <li class="pull-left w-10 ml-md-4 ml-sm-3 ml-lg-4 ml-1">
+                  <img class="demo cursor w-100" src="img/web2.jpg"  onclick="currentSlide(1)" alt="">
+                </li>
+                <li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web3.jpg"  onclick="currentSlide(2)" alt="">
+                </li>
+                <li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web4.jpg"  onclick="currentSlide(3)" alt="">
+                </li>
+                <li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web5.jpg"  onclick="currentSlide(4)" alt="">
+                </li>
+                <li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web7.jpg"  onclick="currentSlide(5)" alt="">
+				  </li>
+                <li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web8.jpg"  onclick="currentSlide(6)" alt="">
+                </li>
+				<!--<li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web9.jpg"  onclick="currentSlide(7)" alt="">
+                </li>
+				<li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web8.jpg"  onclick="currentSlide(8)" alt="">
+                </li>
+				<li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web9.jpg"  onclick="currentSlide(9)" alt="">
+                </li>
+				<li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web10.jpg"  onclick="currentSlide(10)" alt="">
+                </li>
+				<li class="pull-left w-10 ml-md-2 ml-sm-2 ml-lg-3 ml-1">
+                  <img class="demo cursor w-100" src="img/web11.jpg"  onclick="currentSlide(11)" alt="">
+                </li> -->
+              </ul>
+              </div>
+            </div>
+            </div>
+        </section>
+
+<section>
+	
+	<img src="img/web9.jpg" style="width: 100%;height: auto;margin-top: 5rem!important;">
+	
+	</section>
+		
+<!--<section id="gallery">		
+        <div class="container">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="img/web2.jpg" alt="" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="img/web3.jpg" alt="" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="img/web4.jpg" alt="" style="width:100%;">
+      </div>
+    </div>
+
+    
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</section> -->
+
+
+
+
+
+
+         
+		<!--<section id="contactus">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-4"><img class="wow " src="img/wow.png" alt="First slide"></div>
+                    <div class="col-8">
+                      <div class="testimonial-left-text  ml-5 pl-4">
+                        <h3 class="text-uppercase">client Testimonial</h3>
+                        <p>People are definitely a company's greatest asset. It doesn't make any difference</p>
+                      </div>
+                      <div class="quote d-none d-lg-block">
+                        <p><i class="fa fa-quote-left"></i> People are definitely a company's greatest asset. It doesn't make any difference whether the product is cars or cosmetics. A company is only as good as the people it keeps. <i class="fa fa-quote-right"></i></p>
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-4"><img class="wow" src="img/wow.png" alt="First slide"></div>
+                    <div class="col-8">
+                      <div class="testimonial-left-text">
+                        <h3 class="text-uppercase">client Testimonial</h3>
+                        <p>People are definitely a company's greatest asset. It doesn't make any difference</p>
+                      </div>
+                      <div class="quote d-none d-lg-block">
+                        <p><i class="fa fa-quote-left"></i> People are definitely a company's greatest asset. It doesn't make any difference whether the product is cars or cosmetics. A company is only as good as the people it keeps. <i class="fa fa-quote-right"></i></p>
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-4"><img class="wow" src="img/wow.png" alt="First slide"></div>
+                    <div class="col-8">
+                      <div class="testimonial-left-text">
+                        <h3 class="text-uppercase">client Testimonial</h3>
+                        <p>People are definitely a company's greatest asset. It doesn't make any difference</p>
+                      </div>
+                      <div class="quote d-none d-lg-block">
+                        <p><i class="fa fa-quote-left"></i> People are definitely a company's greatest asset. It doesn't make any difference whether the product is cars or cosmetics. A company is only as good as the people it keeps. <i class="fa fa-quote-right"></i></p>
+                        <span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section> -->
+		
+		
+		
+		
+		<section id="Contactus">
+          <div class="container">
+            <div class="portfolio-text text-center" style="margin-top: 5rem!important;">
+              <h2 style="color:#111582;">Contact Us</h2>
+              <svg width="30" height="20">
+               <path d="M0,14 22,1" stroke="#c90129" stroke-width="3" />
+				
+        		<!--<path d="M0,9 25,9" stroke="#67e6e0" stroke-width="1"/>
+        		<path d="M0,18 25,18" stroke="#67e6e0" stroke-width="1"/> -->
+             </svg>
+              
+            </div>
+            <div class="team-membar mt-md-5">
+              <div class="row">
+			  <div class="col-4" style="flex-grow: 0;flex-shrink: 0;flex-basis: 50%;max-width: 50%;">
+                 
+                      <!--<div class="view hm-white-slight">
+                          <img src="img/oslo.png" class="img-fluid" alt="Oslo" style="max-width:70%;">
+                      </div> -->
+                      <div class="card-body text-center">
+                          <h4 class="card-title"><strong>OSLO</strong></h4>
+                          <h6>Golden Ocean Management AS<br>
+P.O.Box 2005 Vika<br>
+NO-0125 Oslo, Norway<br>
+T : +47 22 01 7340<br>
+F : +47 22 01 7359<br>
+operations@ufcarriers.com<br>
+chartering@ufcarriers.com<br>
+www.goldenocean.no</h6>
+                          <!--<a href="#" class="btn-fb"><i class="fa fa-facebook"></i></a>
+                          <a href="#" class="btn-tw m-md-2"><i class="fa fa-twitter"></i></a>
+                          <a href="#" class="btn-linkedin"><i class="fa fa-linkedin"></i></a>-->
+                      </div>
+                 
+                </div>
+                <div class="col-4" style="flex-grow: 0;flex-shrink: 0;flex-basis: 50%;max-width: 50%;">
+                  
+                     <!-- <div class="view hm-white-slight">
+                          <img src="img/singapore.jpg" class="img-fluid" alt="Singapore" style="max-width:70%;">
+                      </div> -->
+                      <div class="card-body text-center">
+                          <h4 class="card-title"><strong>SINGAPORE</strong></h4>
+                          <h6>Golden Ocean Management Asia Pte Ltd<br>
+10 Hoe Chiang Road<br>
+#18-01 Keppel Towers<br>
+Singapore 089315<br>
+T : +65 6226 1926<br>
+F : +65 6293 3515<br>
+operations@ufcarriers.com<br>
+chartering@ufcarriers.com<br>
+www.goldenocean.bm</h6>
+                          <!--<a href="#" class="btn-fb"><i class="fa fa-facebook"></i></a>
+                          <a href="#" class="btn-tw m-md-2"><i class="fa fa-twitter"></i></a>
+                          <a href="#" class="btn-linkedin"><i class="fa fa-linkedin"></i></a>-->
+                      </div>
+                  
+                </div>
+                <div class="col-4" style="flex-grow: 0;flex-shrink: 0;flex-basis: 50%;max-width: 50%;">
+                  
+                      <!--<div class="view hm-white-slight">
+                          <img src="img/dubai.jpg" class="img-fluid" alt="Dubai" style="max-width:70%;">
+                      </div> -->
+                      <div class="card-body text-center">
+                          <h4 class="card-title"><strong>DUBAI</strong></h4>
+                          <h6>ICL Ship Management LLC<br>
+P.O.Box 487407<br>
+308 # Ibn Battuta Gate<br>
+Dubai, United Arab Emirates<br>
+T : +971 4 432 9300<br>
+F : +971 4 432 9311<br>
+mail@iclship.com<br>
+www.iclship.com</h6>
+                          <!--<a href="#" class="btn-fb"><i class="fa fa-facebook"></i></a>
+                          <a href="#" class="btn-tw m-md-2"><i class="fa fa-twitter"></i></a>
+                          <a href="#" class="btn-linkedin"><i class="fa fa-linkedin"></i></a>-->
+                      </div>
+                 
+                </div>
+                <div class="col-4" style="flex-grow: 0;flex-shrink: 0;flex-basis: 50%;max-width: 50%;">
+                 
+                     <!-- <div class="view hm-white-slight">
+                          <img src="img/usa.jpg" class="img-fluid" alt="New York" style="max-width:70%;">
+                      </div> -->
+                      <div class="card-body text-center">
+                          <h4 class="card-title"><strong>NEW YORK</strong></h4>
+                          <h6>Integrated Commodity Logistics Corp.<br>
+845 Third Avenue, 6th Floor<br>
+New York, NY, 10022, USA<br>
+T : +1 646 867 0827<br>
+nyc@iclship.com<br>
+www.iclship.com</h6>
+                          <!--<a href="#" class="btn-fb"><i class="fa fa-facebook"></i></a>
+                          <a href="#" class="btn-tw m-md-2"><i class="fa fa-twitter"></i></a>
+                          <a href="#" class="btn-linkedin"><i class="fa fa-linkedin"></i></a>-->
+                      </div>
+                 
+                </div>
+              </div>
+            </div> 
+			<h6 style="text-align:center;margin-top: 5rem!important;">Registered address: United Freight Carriers LLC, 80 Broad Street, Monrovia, Liberia.</h6>
+          </div>
+		  
+        </section> 
+		
+		<section id="Services">
+	
+	<img src="img/web10.jpg" style="width: 100%;height: auto;margin-top: 5rem!important;">
+	
+	</section>
+		
+		<section id="links">
+          <div class="container">
+            <div class="portfolio-text text-center" style="margin-top: 5rem!important;">
+              <h2 style="color:#111582;">Links</h2>
+              <svg width="30" height="20">
+               <path d="M0,14 22,1" stroke="#c90129" stroke-width="3" />
+				
+        		<!--<path d="M0,9 25,9" stroke="#67e6e0" stroke-width="1"/>
+        		<path d="M0,18 25,18" stroke="#67e6e0" stroke-width="1"/> -->
+             </svg>
+			 <h6><a href="https://www.goldenocean.bm/">Golden Ocean</a></h6>
+			 <h6><a href="https://www.frontline.bm/">Frontline Ltd.</a></h6>
+			 <h6><a href="https://www.seadrill.com/">SeaDrill Limited</a></h6>
+			 <h6><a href="http://www.shipfinance.org/">Ship Finance International Limited</a></h6>
+			 <h6><a href="https://www.clarksons.com/">Clarksons</a></h6>
+			 <h6><a href="https://fearnleys.com/">Fearnleys A/S</a></h6>
+			 <h6><a href="https://www.ssyonline.com/">Simpson. Spence & Young Ltd.</a></h6>
+			 <h6><a href="https://www.bergvallmarine.com/">Bergvall Marine AS</a></h6>
+			  <h6><a href="https://www.skuld.com/templates/Startpage.aspx?id=1437&id=1437">Skuld</a></h6>
+			   <h6><a href="https://www.nepia.com/">North of England</a></h6>
+			 
+            </div>
+            <!--<div class="team-membar mt-md-5">
+              <div class="row">
+                <div class="col-4">
+                  <div class="card card-cascade mx-md-3 mx-lg-5">
+                      <div class="view hm-white-slight">
+                          <img src="img/man-1.png" class="img-fluid" alt="man">
+                      </div>
+                      <div class="card-body text-center">
+                          <h4 class="card-title"><strong>Lorel</strong></h4>
+                          <p class="card-text d-none d-sm-block">Phasellus vehicula justo eget diam posuere sollicitudin eu tincidunt nulla.</p>
+                          <a href="#" class="btn-fb"><i class="fa fa-facebook"></i></a>
+                          <a href="#" class="btn-tw m-md-2"><i class="fa fa-twitter"></i></a>
+                          <a href="#" class="btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card card-cascade mx-md-3 mx-lg-5">
+                      <div class="view hm-white-slight">
+                          <img src="img/man-2.png" class="img-fluid" alt="man">
+                      </div>
+                      <div class="card-body text-center">
+                          <h4 class="card-title"><strong>Lorel</strong></h4>
+                          <p class="card-text d-none d-sm-block">Phasellus vehicula justo eget diam posuere sollicitudin eu tincidunt nulla.</p>
+                          <a href="#" class="btn-fb"><i class="fa fa-facebook"></i></a>
+                          <a href="#" class="btn-tw mt-2 m-lg-2  m-md-1"><i class="fa fa-twitter"></i></a>
+                          <a href="#" class="btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="card card-cascade mx-md-3 mx-lg-5">
+                      <div class="view hm-white-slight">
+                          <img src="img/man-3png.png" class="img-fluid" alt="man">
+                      </div>
+                      <div class="card-body text-center">
+                          <h4 class="card-title"><strong>Ipsum</strong></h4>
+                          <p class="card-text d-none d-sm-block">Phasellus vehicula justo eget diam posuere sollicitudin eu tincidunt nulla.</p>
+                          <a href="#" class="btn-fb"><i class="fa fa-facebook"></i></a>
+                          <a href="#" class="btn-tw m-md-2"><i class="fa fa-twitter"></i></a>
+                          <a href="#" class="btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </section>
+		<!--<section id="rssfeed">
+          <div class="container">
+		  <div class="portfolio-text text-center" style="margin-top: 5rem!important;">
+			<div id="worldUpdate" style="margin:auto;">
+                    <script type="text/javascript" src="http://p3k.org/rss/proxy.r?textColor=black&amp;width=1000&amp;align=&amp;fontFace=&amp;url=http%3A%2F%2Fwww.tradewinds.no%2Frss2&amp;frameColor=%23b2b2b2&amp;compact=&amp;showXmlButton=true&amp;boxFillColor=white&amp;_=1285087454616&amp;titleBarColor=%237f7f7f&amp;maxItems=3&amp;titleBarTextColor=%23ffffff&amp;"></script>
+                    
+                    <img src="img/s.gif" height="2" width="1" border="0"/><br/>
+                    <script type="text/javascript" src="http://p3k.org/rss/proxy.r?textColor=black&amp;align=&amp;width=1000&amp;fontFace=&amp;url=http%3A%2F%2Fwww.bunkerworld.com%2Fnews%2Frss&amp;compact=true&amp;frameColor=%23b2b2b2&amp;showXmlButton=true&amp;boxFillColor=white&amp;_=1285087130451&amp;titleBarColor=%237f7f7f&amp;maxItems=5&amp;titleBarTextColor=%23ffffff&amp;"></script>
+            </div>
+			</div>
+		  </div>
+		</section> -->
+        <section id="footer" style="margin-top: 5rem!important;">
+            <div class="container">
+              <div class="footer-content text-center" >
+               <!-- <h2 class="text-light mb-md-3 text-uppercase">Join Us &amp; Free Subscribe</h2>-->
+                <!--<p>The first requirement for an user experience is to meet <br> the exact needs of the customer.</p> -->
+                <!--<div class="d-flex justify-content-center">
+                  <form action="#" class="my-md-5">
+                    <div class="input-group">
+                       <input class="w-100 px-md-5" name="email" id="email" type="email" placeholder="Your Mail" required>
+                       <button class="btn btn-info px-md-5 py-md-2 px-1 py-1 ml-md-2" type="submit">Send</button>
+                    </div>
+                  </form>
+                </div> -->
+								<img class="pt-md-5" src="img/w.png" alt="">
+								<p class="copyright py-md-2" style="color:white;"> &copy; 2019 - <span>Peryton</span> All Right Reserved</p>
+								<!--<div class="social-icon mt-5">
+									<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+									<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+									<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+								</div> -->
+              </div>
+            </div>
+        </section>
+    <!-- JQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/jquery.particleground.min.js"></script>
+    <script src="js/scrollreveal.min.js"></script>
+</body>
+</html>
