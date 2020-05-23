@@ -119,6 +119,16 @@ svg{
   height: auto;
   background: url(../img/slider-bg.jpg) no-repeat;
   position:relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
   /*
     fixed = parallax
     scroll = normal
